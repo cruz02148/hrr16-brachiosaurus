@@ -1,0 +1,46 @@
+{
+  "name": "brachiosaurus",
+  "version": "1.0.0",
+  "description": "App that generates custom workouts based on a set of criteria provided by the user.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrr16-brachiosaurus/hrr16-brachiosaurus.git"
+  },
+  "author": "Brachiosaurus",
+  "contributors": [
+    {
+      "name": "Jason Bacchetta",
+      "url": "http://bacchetta.co/"
+    },
+    {
+      "name": "Michael Cruz",
+      "url": "http://www.michaelgcruz.com"
+    },
+    {
+      "name": "Raymond To",
+      "url": "http://rayto510.github.io"
+    }
+  ],
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/hrr16-brachiosaurus/hrr16-brachiosaurus/issues"
+  },
+  "homepage": "https://github.com/hrr16-brachiosaurus/hrr16-brachiosaurus#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.0",
+    "eslint-plugin-jsx-a11y": "^1.2.2",
+    "eslint-plugin-react": "^5.1.1",
+    "gulp": "^3.9.1"
+  }
+}
