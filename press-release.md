@@ -20,7 +20,7 @@
   > of workouts to follow on a weekly schedule. The app will be a central location for everything related
   > to achieving their fitness goals.
 
-## Quote from You ##
+## Quotfrom You ##
   > "Helping people get into the best shape of their lives"
 
 ## How to Get Started ##
