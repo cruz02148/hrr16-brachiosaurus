@@ -1,33 +1,52 @@
-# Pocket Trainer #
+# Project Name
 
-## Heading ##
-  > Workouts and fitness goals in a snap.
+> Pithy project description
 
-## Sub-Heading ##
-  > App that generates custom workouts based on a set of criteria provided by the user.
+## Team
 
-## Summary ##
-  > A user can go onto our website and answering a series of questions and our app will determine the best 
-  > set of workouts to follow in order to help the user achieve their fitness goals. A user can then choose to 
-  > create an account and our app will allow them to keep track of their workouts and hold themselves accountable. 
-  
-## Problem ##
-  > Many people want to get into better shape, but don't know where to get started. Our app allows people
-  > to answer simple questions and they can have a clear idea of what to do to get in shape.
+  - __Product Owner__: Michael Cruz
+  - __Scrum Master__: Raymond To
+  - __Development Team Members__: Jason Bacchetta
 
-## Solution ##
-  > The user answers very simple questions (i.e. Gender/Goal/etc.) and the app will spit out a series
-  > of workouts to follow on a weekly schedule. The app will be a central location for everything related
-  > to achieving their fitness goals.
+## Table of Contents
 
-## Quote from You ##
-  > "Helping people get into the best shape of their lives"
+1. [Usage](#Usage)
+1. [Requirements](#requirements)
+1. [Development](#development)
+    1. [Installing Dependencies](#installing-dependencies)
+    1. [Tasks](#tasks)
+1. [Team](#team)
+1. [Contributing](#contributing)
 
-## How to Get Started ##
-  > All you need to do is answer a few simple questions and then just follow the instructions our app gives you
+## Usage
 
-## Customer Quote ##
-  > "The app made it really easy for me to start achieving my fitness goals. They laid out the plan"
+> Some usage instructions
 
-## Closing and Call to Action ##
-  > Head over to our website www.pockettrainer.com
+## Requirements
+
+- Node 0.10.x
+- Redis 2.6.x
+- Postgresql 9.1.x
+- etc
+- etc
+
+## Development
+
+### Installing Dependencies
+
+From within the root directory:
+
+```sh
+sudo npm install -g bower
+npm install
+bower install
+```
+
+### Roadmap
+
+View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
