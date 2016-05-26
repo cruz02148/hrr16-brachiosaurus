@@ -1,9 +1,6 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-app.get('/', function(request, response) {
-  response.send('Hello world from server.js');
-});
+app.use(express.static(`${__dirname}/source`));
 
-app.listen(3000);
-console.log('Server running on port 3000!');
+app.listen(3000, () => console.log('Server running on port 3000!'));
