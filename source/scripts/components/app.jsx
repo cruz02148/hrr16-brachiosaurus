@@ -1,14 +1,18 @@
-// load up all components in one div (header, banner)
 import React from 'react';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Nav from './header.jsx';
+import PromptBox from './prompt.jsx';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
-      <div>Hello</div>
+      <MuiThemeProvider muiTheme={getMuiTheme()}>
+        <div>
+          <Nav />
+          <PromptBox />
+        </div>
+      </MuiThemeProvider>
     );
   }
 }

@@ -19,7 +19,7 @@
   > The user answers very simple questions (i.e. Gender/Goal/etc.) and the app will spit out a series
   > of workouts to follow on a weekly schedule. The app will be a central location for everything related
   > to achieving their fitness goals.
-
+__
 ## Quotfrom You ##
   > "Helping people get into the best shape of their lives"
 
