@@ -1,28 +1,40 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: `${__dirname}/source/index.html`,
-  filename: 'index.html',
-  inject: 'body',
-});
+const source = `${__dirname}/source/`;
+const build = `${__dirname}/client/`;
 
 module.exports = {
-  entry: [
-    './source/index.js',
-    './source/scripts/components/app.jsx',
-    './source/scripts/components/header.jsx',
-    './source/scripts/components/prompt.jsx'
-    // './source/scripts/styles/style.css'
-  ],
+  entry: source,
+  output: {
+    path: build,
+    filename: 'bundle.js',
+  },
   module: {
     loaders: [
-      { test: /\.jsx?$/, include: `${__dirname}/source`, loader: 'eslint-loader' },
-      { test: /\.jsx?$/, include: `${__dirname}/source`, loader: 'babel-loader' }
-      // { test: /\.css$/, include: `${__dirname}/source`, loader: 'style-loader!css-loader' }
+      {
+        test: /\.jsx?$/,
+        include: source,
+        loaders: ['eslint-loader', 'babel?presets[]=es2015,presets[]=react'],
+      }
+      // {
+      //   test: /\.css$/,
+      //   include: `${__dirname}/source`,
+      //   loaders: ['isomorphic-style-loader', 'css-loader', 'postcss-loader'],
+      // }
     ],
   },
-  output: {
-    filename: 'bundle.js',
-    path: `${__dirname}/client`,
-  },
-  plugins: [HTMLWebpackPluginConfig],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: `${source}index.html`,
+      minify: {
+        collapseWhitespace: true,
+        collapseInlineTagWhitespace: true,
+        html5: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeAttributeQuotes: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+      },
+    })
+  ],
 };
