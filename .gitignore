@@ -1,0 +1,19 @@
+# Misc
+.DS_Store
+.AppleDouble
+.LSOverride
+azure.err
+iisnode.yml
+
+# Build files
+
+# Node modules
+node_modules/
+
+# WebStorm files
+.idea/
+
+# Floobits
+.floo
+.floobit
+.flooignore
