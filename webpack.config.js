@@ -13,7 +13,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         include: source,
-        loaders: ['eslint-loader', 'babel?presets[]=es2015,presets[]=react'],
+        loaders: ['babel?presets[]=es2015,presets[]=react', 'eslint-loader'],
       }
       // {
       //   test: /\.css$/,
