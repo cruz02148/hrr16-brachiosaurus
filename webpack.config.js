@@ -1,7 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackBrowserPlugin = require('webpack-browser-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const build = process.argv.indexOf('--build') !== -1;
+const target = process.env.npm_lifecycle_event;
 const source = `${__dirname}/client/source/`;
 const autoprefixer = require('autoprefixer');
 const merge = require('webpack-merge');
@@ -32,6 +32,9 @@ const config = {
   },
   plugins: [
     new WebpackBrowserPlugin(),
+    new HtmlWebpackPlugin({
+      template: `${source}index.html`,
+    }),
     new ExtractTextPlugin("style.css", {
         allChunks: false,
       }
@@ -39,7 +42,7 @@ const config = {
   ],
 };
 
-if (build) {
+if (target === 'build') {
   config.module.loaders[0].loaders.push('eslint');
   config.output.filename = 'bundle.min.js';
   config.plugins.push(
@@ -48,9 +51,6 @@ if (build) {
       compress: {
         warnings: false,
       }
-    }),
-    new HtmlWebpackPlugin({
-      template: `${source}index.html`,
     })
   );
   config.plugins[1].options.minify = {
