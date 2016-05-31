@@ -1,7 +1,10 @@
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackBrowserPlugin = require('webpack-browser-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const source = `${__dirname}/client/source/`;
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 const build = process.argv.indexOf('--build') !== -1;
 const config = {
   entry: source,
@@ -19,12 +22,19 @@ const config = {
       {
         test: /\.css$/,
         include: source,
-        loaders: ['isomorphic-style-loader', 'css-loader', 'postcss-loader'],
+        loader: ExtractTextPlugin.extract('isomorphic-style', 'css', 'postcss'),
       }
     ],
   },
+  postcss: function () {
+    return [autoprefixer, cssnano];
+  },
   plugins: [
     new WebpackBrowserPlugin(),
+    new ExtractTextPlugin("style.css", {
+        allChunks: false,
+      }
+    ),
     new HtmlWebpackPlugin({
       template: `${source}index.html`,
     })
