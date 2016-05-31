@@ -4,8 +4,8 @@
   "description": "App that generates custom workouts based on a set of criteria provided by the user.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "nodemon server/server.js"
+    "test": "webpack --build --progress",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -53,12 +53,12 @@
     "eslint-loader": "^1.3.0",
     "eslint-plugin-import": "^1.8.0",
     "eslint-plugin-jsx-a11y": "^1.2.2",
-    "eslint-plugin-material-ui": "^1.0.1",
     "eslint-plugin-react": "^5.1.1",
     "html-webpack-plugin": "^2.17.0",
     "isomorphic-style-loader": "^1.0.0",
     "postcss-loader": "^0.9.1",
     "webpack": "^1.13.1",
+    "webpack-browser-plugin": "^1.0.6",
     "webpack-dev-server": "^1.14.1"
   }
 }

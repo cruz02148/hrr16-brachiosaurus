@@ -1,11 +1,12 @@
+const webpack = require('webpack');
+const WebpackBrowserPlugin = require('webpack-browser-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const source = `${__dirname}/source/`;
-const build = `${__dirname}/client/`;
-
-module.exports = {
+const source = `${__dirname}/client/source/`;
+const build = process.argv.indexOf('--build') !== -1;
+const config = {
   entry: source,
   output: {
-    path: build,
+    path: `${__dirname}/client/build/`,
     filename: 'bundle.js',
   },
   module: {
@@ -13,28 +14,38 @@ module.exports = {
       {
         test: /\.jsx?$/,
         include: source,
-        loaders: ['babel?presets[]=es2015,presets[]=react', 'eslint-loader'],
+        loaders: ['babel?presets[]=es2015,presets[]=react'],
+      },
+      {
+        test: /\.css$/,
+        include: source,
+        loaders: ['isomorphic-style-loader', 'css-loader', 'postcss-loader'],
       }
-      // {
-      //   test: /\.css$/,
-      //   include: `${__dirname}/source`,
-      //   loaders: ['isomorphic-style-loader', 'css-loader', 'postcss-loader'],
-      // }
     ],
   },
   plugins: [
+    new WebpackBrowserPlugin(),
     new HtmlWebpackPlugin({
       template: `${source}index.html`,
-      minify: {
-        collapseWhitespace: true,
-        collapseInlineTagWhitespace: true,
-        html5: true,
-        minifyCSS: true,
-        minifyJS: true,
-        removeAttributeQuotes: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-      },
     })
   ],
 };
+
+if (build) {
+  config.module.loaders[0].loaders.push('eslint');
+  config.output.filename = 'bundle.min.js';
+  config.plugins.push(
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.DedupePlugin()
+  );
+  config.plugins[1].options.minify = {
+    collapseWhitespace: true,
+    collapseInlineTagWhitespace: true,
+    html5: true,
+    removeAttributeQuotes: true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+  };
+}
+
+module.exports = config;
