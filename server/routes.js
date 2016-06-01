@@ -1,37 +1,23 @@
-// var controllers = require('./controllers');
 const express = require('express');
-const parser = require('body-parser');
-const router = require('express').Router();
-const EasyWorkout = require('./db/models/EasyWorkout');
-const NormalWorkout = require('./db/models/NormalWorkout');
-const HardWorkout = require('./db/models/HardWorkout');
-const WeightLoss = require('./db/models/WeightLoss');
-const User = require('./db/models/user');
+const router = express.Router();
+// const parser = require('body-parser');
+// const EasyWorkout = require('./db/models/EasyWorkout');
+// const NormalWorkout = require('./db/models/NormalWorkout');
+// const User = require('./db/models/user.js');
 
-module.exports = {
-  home: router.route('/')
-    .all(function (req, res) {
-      /* can use .all which is called for all requests to a given path (e.g.
-       use it to turn endpoint characters to uppercase, etc.) */
-    })
-    .get(function (req, res) {
-      console.log('hello!');
-    })
-    .post(function (req, res) {
-    }),
+router.route('/')
+  .all(function (req, res) {
+    /* can use .all for all requests to a given path (e.g. use it to turn
+     endpoint characters to uppercase, etc.) */
+  })
+  .get(function (req, res) {
 
-  users: router.route('/')
-    .all(function (req, res) {
-      /* can use .all which is called for all requests to a given path (e.g.
-       use it to turn endpoint characters to uppercase, etc.) */
-    })
-    .get(function (req, res) {
-    })
-    .post(function (req, res) {
-    }),
-};
+  })
+  .post(function (req, res) {
 
+  });
 
+module.exports = router;
 // router.route('/')
 //   .all(function (req, res) {
 //
