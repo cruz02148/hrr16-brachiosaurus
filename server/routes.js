@@ -1,12 +1,8 @@
-// var controllers = require('./controllers');
 const express = require('express');
 const parser = require('body-parser');
 const router = require('express').Router();
 const EasyWorkout = require('./db/models/EasyWorkout');
 const NormalWorkout = require('./db/models/NormalWorkout');
-const HardWorkout = require('./db/models/HardWorkout');
-const WeightLoss = require('./db/models/WeightLoss');
-const User = require('./db/models/user');
 
 module.exports = {
   home: router.route('/')
@@ -20,7 +16,7 @@ module.exports = {
     .post(function (req, res) {
     }),
 
-  users: router.route('/')
+  workouts: router.route('/api/workout')
     .all(function (req, res) {
       /* can use .all which is called for all requests to a given path (e.g.
        use it to turn endpoint characters to uppercase, etc.) */
