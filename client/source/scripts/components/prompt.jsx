@@ -1,7 +1,6 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
-import { teal500 } from 'material-ui/styles/colors';
+import { grey600 } from 'material-ui/styles/colors';
 import QuestionGender from './QuestionGender.jsx';
 import QuestionAge from './QuestionAge.jsx';
 import QuestionGoal from './QuestionGoal.jsx';
@@ -14,19 +13,30 @@ const stylePaper = {
   marginTop: '20',
   textAlign: 'center',
   display: 'block',
-  color: teal500,
+  color: grey600,
+};
+
+const answer = {
+  gender: '',
+  age: '',
+  goal: '',
 };
 
 
 class PromptBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { answer };
+  }
+
   render() {
     return (
       <div>
-        <Paper style={stylePaper} zDepth={3}>
+        <Paper className="prompt-background" style={stylePaper} zDepth={3}>
           <div>
-            <QuestionGender />
-            <QuestionAge />
-            <QuestionGoal />
+            <QuestionGender answer={this.state.answer} />
+            <QuestionAge answer={this.state.answer} />
+            <QuestionGoal answer={this.state.answer} />
           </div>
         </Paper>
       </div>
