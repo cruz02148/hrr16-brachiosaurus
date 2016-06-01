@@ -14,11 +14,11 @@ const addHTML = new HtmlWebpackPlugin({
   template: `${source}index.html`,
   minify: {
     collapseWhitespace: true,
-    collapseInlineTagWhitespace: true,
+    conservativeCollapse: true, // test this
     html5: true,
-    removeAttributeQuotes: true,
     removeComments: true,
-    removeRedundantAttributes: true,
+    sortAttributes: true,
+    sortClassName: true,
   },
 });
 
