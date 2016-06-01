@@ -7,13 +7,13 @@ import QuestionAge from './QuestionAge.jsx';
 import QuestionGoal from './QuestionGoal.jsx';
 
 const stylePaper = {
-  height: 500,
-  width: 500,
-  margin: '30',
-  position: 'absolute',
-  left: '25%',
+  height: '80%',
+  width: '40%',
+  padding: '30',
+  margin: 'auto',
+  marginTop: '20',
   textAlign: 'center',
-  display: 'inline-block',
+  display: 'block',
   color: teal500,
 };
 
