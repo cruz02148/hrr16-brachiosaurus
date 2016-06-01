@@ -11,6 +11,7 @@ app.use(parser.json());
 
 // routes
 app.use('/', router.home);
+app.use('/api/workout', router.workouts);
 
 app.listen(port, () => console.log('Server running on port 3000!'));
 module.exports = app;

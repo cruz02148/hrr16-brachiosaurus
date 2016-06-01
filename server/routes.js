@@ -7,26 +7,27 @@ const NormalWorkout = require('./db/models/NormalWorkout');
 module.exports = {
   home: router.route('/')
     .all(function (req, res) {
-      /* can use .all which is called for all requests to a given path (e.g.
-       use it to turn endpoint characters to uppercase, etc.) */
+      /* can use .all for all requests to a given path (e.g. use it to turn
+       endpoint characters to uppercase, etc.) */
     })
     .get(function (req, res) {
-      console.log('hello!');
+
     })
     .post(function (req, res) {
+
     }),
 
   workouts: router.route('/api/workout')
     .all(function (req, res) {
-      /* can use .all which is called for all requests to a given path (e.g.
-       use it to turn endpoint characters to uppercase, etc.) */
+
     })
     .get(function (req, res) {
+
     })
     .post(function (req, res) {
+
     }),
 };
-
 
 // router.route('/')
 //   .all(function (req, res) {
