@@ -1,34 +1,23 @@
 const express = require('express');
-const parser = require('body-parser');
-const router = require('express').Router();
-const EasyWorkout = require('./db/models/EasyWorkout');
-const NormalWorkout = require('./db/models/NormalWorkout');
+const router = express.Router();
+// const parser = require('body-parser');
+// const EasyWorkout = require('./db/models/EasyWorkout');
+// const NormalWorkout = require('./db/models/NormalWorkout');
+// const User = require('./db/models/user.js');
 
-module.exports = {
-  home: router.route('/')
-    .all(function (req, res) {
-      /* can use .all for all requests to a given path (e.g. use it to turn
-       endpoint characters to uppercase, etc.) */
-    })
-    .get(function (req, res) {
+router.route('/')
+  .all(function (req, res) {
+    /* can use .all for all requests to a given path (e.g. use it to turn
+     endpoint characters to uppercase, etc.) */
+  })
+  .get(function (req, res) {
 
-    })
-    .post(function (req, res) {
+  })
+  .post(function (req, res) {
 
-    }),
+  });
 
-  workouts: router.route('/api/workout')
-    .all(function (req, res) {
-
-    })
-    .get(function (req, res) {
-
-    })
-    .post(function (req, res) {
-
-    }),
-};
-
+module.exports = router;
 // router.route('/')
 //   .all(function (req, res) {
 //

@@ -3,18 +3,19 @@ const parser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 const db = require('./db');
-const router = require('./routes.js');
-const User = require('./db/models/user.js');
+// const router = require('./routes.js');
+// const User = require('./db/models/user.js');
 
 app.use(express.static(`${__dirname}/../client`));
 app.use(parser.json());
 
-// routes
-app.use('/', router.home);
-app.use('/api/workout', router.workouts);
-
 app.listen(port, () => console.log('Server running on port 3000!'));
 module.exports = app;
+
+// // routes
+// app.use('/', router);
+// app.use('/api/workout', router);
+// app.use('/user', router);
 
 // app.get('/user', function (req, res){
 //   User.find(function (err, data) {
