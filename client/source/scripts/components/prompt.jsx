@@ -1,41 +1,42 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
-import { teal500 } from 'material-ui/styles/colors';
+import { grey600 } from 'material-ui/styles/colors';
+import QuestionGender from './QuestionGender.jsx';
+import QuestionAge from './QuestionAge.jsx';
+import QuestionGoal from './QuestionGoal.jsx';
 
 const stylePaper = {
-  height: 500,
-  width: 500,
-  margin: '30',
-  position: 'absolute',
-  left: '25%',
+  height: '80%',
+  width: '40%',
+  padding: '30',
+  margin: 'auto',
+  marginTop: '20',
   textAlign: 'center',
-  display: 'inline-block',
-  color: teal500,
+  display: 'block',
+  color: grey600,
 };
 
-const styleButton = {
-  margin: 12,
+const answer = {
+  gender: '',
+  age: '',
+  goal: '',
 };
+
 
 class PromptBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { answer };
+  }
+
   render() {
     return (
       <div>
-        <Paper style={stylePaper} zDepth={3}>
+        <Paper className="prompt-background" style={stylePaper} zDepth={3}>
           <div>
-            <h2>What's your gender?</h2>
-            <RaisedButton label="Male" primary style={styleButton} />
-            <RaisedButton label="Female" secondary style={styleButton} />
-
-            <h2>How old are you?</h2>
-            <RaisedButton label="18-30" primary style={styleButton} />
-            <RaisedButton label="30-45" secondary style={styleButton} />
-            <RaisedButton backgroundColor="#a4c639" label="45+" style={styleButton} />
-
-            <h2>What is your goal?</h2>
-            <RaisedButton label="Build Muscle" primary style={styleButton} />
-            <RaisedButton label="Lose Fat" secondary style={styleButton} />
+            <QuestionGender answer={this.state.answer} />
+            <QuestionAge answer={this.state.answer} />
+            <QuestionGoal answer={this.state.answer} />
           </div>
         </Paper>
       </div>
