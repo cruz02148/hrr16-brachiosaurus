@@ -9,7 +9,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const loadBrowse = new WebpackBrowserPlugin();
 const removeDup = new webpack.optimize.DedupePlugin();
 const extractCSS = new ExtractTextPlugin("style.min.css");
-const minJS = new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false, }, });
+const minJS = new webpack.optimize.UglifyJsPlugin({
+  compress: {
+    warnings: false,
+  },
+});
 const addHTML = new HtmlWebpackPlugin({
   template: `${source}index.html`,
   minify: {
