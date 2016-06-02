@@ -5,7 +5,6 @@ const styleButton = {
   margin: 12,
 };
 
-
 class QuestionGender extends React.Component {
 
   handleClickMale() {
