@@ -2,6 +2,7 @@ const express = require('express');
 const parser = require('body-parser');
 const app = express();
 const router = express.Router();
+const glob = require("glob");
 const port = process.env.PORT || 3000;
 const firebase = require("firebase");
 firebase.initializeApp({
@@ -27,7 +28,9 @@ firebase.initializeApp({
 // const router = require('./routes.js');
 // const User = require('./db/models/user.js');
 
-app.use(express.static(`${__dirname}/../client`));
+// app.use(express.static(`${__dirname}/../client`));
+app.use(glob('/*'), express.static(`${__dirname}/../client`));
+
 app.use(parser.json());
 var database = firebase.database();
 const workouts = database.ref('workouts/easy/monday');

@@ -37,6 +37,7 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "firebase": "^3.0.3",
+    "glob": "^7.0.3",
     "material-ui": "^0.15.0",
     "mongoose": "^4.4.19",
     "react": "^15.1.0",
