@@ -1,19 +1,24 @@
 import React from 'react';
-import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn}
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+}
   from 'material-ui/Table';
-import TextField from 'material-ui/TextField';
-import Toggle from 'material-ui/Toggle';
 
-const styles = {
-  propContainer: {
-    width: 200,
-    overflow: 'hidden',
-    margin: '20px',
-  },
-  propToggleHeader: {
-    margin: '20px auto 10px',
-  },
-};
+// const styles = {
+//   propContainer: {
+//     width: 200,
+//     overflow: 'hidden',
+//     margin: '20px',
+//   },
+//   propToggleHeader: {
+//     margin: '20px auto 10px',
+//   },
+// };
 
 const tableData = [
   {
@@ -91,7 +96,10 @@ export default class WorkoutTable extends React.Component {
             enableSelectAll={this.state.enableSelectAll}
           >
             <TableRow>
-              <TableHeaderColumn colSpan="3" tooltip="Super Header" style={{ textAlign: 'center' }}>
+              <TableHeaderColumn
+                colSpan="3" tooltip="Super Header"
+                style={{ textAlign: 'center' }}
+              >
                 Weekly Workout Routine
               </TableHeaderColumn>
             </TableRow>
@@ -113,7 +121,7 @@ export default class WorkoutTable extends React.Component {
                 <TableRowColumn>{row.name}</TableRowColumn>
                 <TableRowColumn>{row.status}</TableRowColumn>
               </TableRow>
-              ))}
+            ))}
           </TableBody>
         </Table>
       </div>
