@@ -7,4 +7,7 @@ const workouts = database.ref('workouts/easy');
 // workouts.once("value", function(data) {
 //   console.log(data);
 // });
-console.log(workouts);
+
+workouts.on("value", function(snap) {
+  console.log(snap.val());
+});
