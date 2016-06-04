@@ -1,10 +1,25 @@
 const express = require('express');
+const React = require('react');
 const parser = require('body-parser');
 const app = express();
 const router = express.Router();
 const glob = require("glob");
 const port = process.env.PORT || 3000;
 const firebase = require("firebase");
+const reactApp = React.createFactory(require('../client/source/scripts/components/app.jsx'));
+const workout = React.createFactory(require('../client/source/scripts/components/Workout.jsx'));
+
+app.get('/', function(req, res) {
+  const reactHtml = React.renderToString(reactApp({}));
+  res.render('index.ejs', {reactOutput: reactHtml});
+});
+
+app.get('/workouts', function(req, res) {
+  const workoutHtml = React.renderToString(workout({}));
+  res.render('index.ejs', {reactOutput: workoutHtml});
+});
+
+
 firebase.initializeApp({
   serviceAccount: {
     projectId: "pocket-trainer-e754d",
