@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 import App from './scripts/components/app.jsx';
 import PromptBox from './scripts/components/prompt.jsx';
 import Workout from './scripts/components/Workout.jsx';
@@ -10,8 +10,7 @@ require('./styles/style.css');
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route component={App}>
-      <Route path="/" component={PromptBox} />
-      <Route path="workouts" component={Workout} />
+      <Route path="/" component={Workout} />
     </Route>
   </Router>
 ), document.getElementById('app'));
