@@ -1,11 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const setsAndReps = ['3 sets of 6 reps', '3 sets of 8 reps', '3 sets of 10 reps',
-'3 sets of 12 reps', '3 sets of 15 reps',
-'4 sets of 6 reps', '4 sets of 8 reps', '4 sets of 10 reps',
-'4 sets of 12 reps', '4 sets of 15 reps',
-'3 sets until failure', '30 minutes', '45 minutes', '60 minutes'];
+const setsAndReps = [
+  '3 sets of 6 reps', //0
+  '3 sets of 8 reps', //1
+  '3 sets of 10 reps' // 2
+  '3 sets of 12 reps', //3
+  '3 sets of 15 reps',//4
+  '4 sets of 6 reps', //5
+  '4 sets of 8 reps', //6
+  '4 sets of 10 reps',//7
+  '4 sets of 12 reps', //8
+  '4 sets of 15 reps', //9
+  '3 sets until failure', //10
+  '30 minutes', //11
+  '45 minutes', //12
+  '60 minutes'//13
+];
 
 const HardWorkoutSchema = new Schema({
   Monday: {
