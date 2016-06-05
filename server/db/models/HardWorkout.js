@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const setsAndReps = [
   '3 sets of 6 reps', //0
   '3 sets of 8 reps', //1
-  '3 sets of 10 reps' // 2
+  '3 sets of 10 reps', // 2
   '3 sets of 12 reps', //3
   '3 sets of 15 reps',//4
   '4 sets of 6 reps', //5
